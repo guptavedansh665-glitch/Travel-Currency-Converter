@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Currency Converter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Phosphor Icons for aesthetic icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <main class="container">
+        <div class="converter-card glass">
+            <header>
+                <h1>Currency Converter</h1>
+                <p>Real-time exchange rates for your travels</p>
+            </header>
+
+            <div class="converter-body">
+                <!-- Base Currency -->
+                <div class="input-group">
+                    <label for="base-amount">Amount</label>
+                    <div class="input-wrapper">
+                        <select id="base-currency" class="currency-select" aria-label="Base Currency"></select>
+                        <input type="number" id="base-amount" value="1.00" min="0" step="0.01">
+                    </div>
+                </div>
+
+                <!-- Swap Button -->
+                <div class="swap-container">
+                    <button id="swap-btn" class="swap-btn" aria-label="Swap Currencies">
+                        <i class="ph ph-arrows-down-up"></i>
+                    </button>
+                </div>
+
+                <!-- Target Currency -->
+                <div class="input-group">
+                    <label for="target-amount">Converted Amount</label>
+                    <div class="input-wrapper target-wrapper">
+                        <select id="target-currency" class="currency-select" aria-label="Target Currency"></select>
+                        <input type="number" id="target-amount" value="0.00" readonly>
+                    </div>
+                </div>
+
+                <!-- Rate Display -->
+                <div class="rate-display">
+                    <div class="loading-shimmer" id="rate-loading">Fetching live rates...</div>
+                    <div class="rate-text" id="rate-text" style="display: none;">
+                        1 USD = 0.92 EUR
+                    </div>
+                    <div class="last-updated" id="last-updated" style="display: none;">
+                        Last updated: Just now
+                    </div>
+                </div>
+                
+                <!-- Error Message -->
+                <div class="error-message" id="error-message" style="display: none;">
+                    <i class="ph ph-warning-circle"></i>
+                    <span>Failed to fetch exchange rates. Please check your connection.</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

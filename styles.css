@@ -1,0 +1,217 @@
+:root {
+    --bg-color: #f3f4f6;
+    --card-bg: #ffffff;
+    --border-color: #e5e7eb;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --input-bg: #f9fafb;
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+}
+
+/* Card */
+.glass { /* keeping class name for HTML compatibility */
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    padding: 32px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Inputs */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.input-wrapper {
+    display: flex;
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.input-wrapper:focus-within {
+    border-color: var(--accent);
+}
+
+.currency-select {
+    background: transparent;
+    color: var(--text-primary);
+    border: none;
+    padding: 16px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    outline: none;
+    border-right: 1px solid var(--border-color);
+}
+
+input[type="number"] {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 16px;
+    text-align: right;
+    outline: none;
+    width: 100%;
+}
+
+input[type="number"]::placeholder {
+    color: var(--text-secondary);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.target-wrapper {
+    background: #f3f4f6;
+}
+
+.target-wrapper input {
+    color: var(--text-primary);
+}
+
+/* Swap Button */
+.swap-container {
+    display: flex;
+    justify-content: center;
+    margin: -16px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.swap-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s;
+}
+
+.swap-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    transform: rotate(180deg);
+}
+
+/* Rate Display */
+.rate-display {
+    margin-top: 32px;
+    text-align: center;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+}
+
+.rate-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.last-updated {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.loading-shimmer {
+    color: var(--text-secondary);
+}
+
+/* Error Message */
+.error-message {
+    margin-top: 24px;
+    padding: 12px;
+    background: #fee2e2;
+    border: 1px solid #f87171;
+    border-radius: 8px;
+    color: #b91c1c;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+@media (max-width: 480px) {
+    .glass {
+        padding: 24px 20px;
+    }
+    
+    .currency-select {
+        padding: 12px;
+    }
+    
+    input[type="number"] {
+        padding: 12px;
+        font-size: 1.25rem;
+    }
+}
